@@ -34,8 +34,6 @@ namespace App
             this.label2 = new System.Windows.Forms.Label();
             this.Text_Surname = new System.Windows.Forms.TextBox();
             this.Text_Patronymic = new System.Windows.Forms.TextBox();
-            this.Text_IndividualNumber = new System.Windows.Forms.TextBox();
-            this.Label_Ind = new System.Windows.Forms.Label();
             this.Label_Passport = new System.Windows.Forms.Label();
             this.Text_Passport = new System.Windows.Forms.TextBox();
             this.Btn_Register = new System.Windows.Forms.Button();
@@ -87,29 +85,11 @@ namespace App
             this.Text_Patronymic.Size = new System.Drawing.Size(232, 29);
             this.Text_Patronymic.TabIndex = 4;
             // 
-            // Text_IndividualNumber
-            // 
-            this.Text_IndividualNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Text_IndividualNumber.Location = new System.Drawing.Point(13, 209);
-            this.Text_IndividualNumber.Name = "Text_IndividualNumber";
-            this.Text_IndividualNumber.Size = new System.Drawing.Size(231, 29);
-            this.Text_IndividualNumber.TabIndex = 5;
-            // 
-            // Label_Ind
-            // 
-            this.Label_Ind.AutoSize = true;
-            this.Label_Ind.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Label_Ind.Location = new System.Drawing.Point(8, 180);
-            this.Label_Ind.Name = "Label_Ind";
-            this.Label_Ind.Size = new System.Drawing.Size(230, 24);
-            this.Label_Ind.TabIndex = 6;
-            this.Label_Ind.Text = "Индивидуальный Номер";
-            // 
             // Label_Passport
             // 
             this.Label_Passport.AutoSize = true;
             this.Label_Passport.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Label_Passport.Location = new System.Drawing.Point(9, 241);
+            this.Label_Passport.Location = new System.Drawing.Point(8, 190);
             this.Label_Passport.Name = "Label_Passport";
             this.Label_Passport.Size = new System.Drawing.Size(235, 24);
             this.Label_Passport.TabIndex = 7;
@@ -119,7 +99,7 @@ namespace App
             // 
             this.Text_Passport.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Text_Passport.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Text_Passport.Location = new System.Drawing.Point(13, 268);
+            this.Text_Passport.Location = new System.Drawing.Point(12, 217);
             this.Text_Passport.Name = "Text_Passport";
             this.Text_Passport.Size = new System.Drawing.Size(232, 29);
             this.Text_Passport.TabIndex = 8;
@@ -127,7 +107,7 @@ namespace App
             // Btn_Register
             // 
             this.Btn_Register.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Btn_Register.Location = new System.Drawing.Point(12, 338);
+            this.Btn_Register.Location = new System.Drawing.Point(12, 286);
             this.Btn_Register.Name = "Btn_Register";
             this.Btn_Register.Size = new System.Drawing.Size(233, 37);
             this.Btn_Register.TabIndex = 9;
@@ -138,7 +118,7 @@ namespace App
             // 
             this.Check_Adm.AutoSize = true;
             this.Check_Adm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Check_Adm.Location = new System.Drawing.Point(12, 303);
+            this.Check_Adm.Location = new System.Drawing.Point(12, 252);
             this.Check_Adm.Name = "Check_Adm";
             this.Check_Adm.Size = new System.Drawing.Size(153, 28);
             this.Check_Adm.TabIndex = 11;
@@ -149,13 +129,11 @@ namespace App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(253, 381);
+            this.ClientSize = new System.Drawing.Size(253, 328);
             this.Controls.Add(this.Check_Adm);
             this.Controls.Add(this.Btn_Register);
             this.Controls.Add(this.Text_Passport);
             this.Controls.Add(this.Label_Passport);
-            this.Controls.Add(this.Label_Ind);
-            this.Controls.Add(this.Text_IndividualNumber);
             this.Controls.Add(this.Text_Patronymic);
             this.Controls.Add(this.Text_Surname);
             this.Controls.Add(this.label2);
@@ -175,8 +153,6 @@ namespace App
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Text_Surname;
         private System.Windows.Forms.TextBox Text_Patronymic;
-        private System.Windows.Forms.TextBox Text_IndividualNumber;
-        private System.Windows.Forms.Label Label_Ind;
         private System.Windows.Forms.Label Label_Passport;
         private System.Windows.Forms.TextBox Text_Passport;
         private System.Windows.Forms.Button Btn_Register;
