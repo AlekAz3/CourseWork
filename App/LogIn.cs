@@ -15,6 +15,13 @@ namespace App
         public LogIn()
         {
             InitializeComponent();
+            Load_Settings();
+            
+        }
+
+        public void Load_Settings()
+        {
+            Text_Password.UseSystemPasswordChar = true;
         }
     }
 }
