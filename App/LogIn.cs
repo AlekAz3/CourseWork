@@ -22,7 +22,6 @@ namespace App
         public void Load_Settings()
         {
             Text_Password.UseSystemPasswordChar = true;
-            
         }
 
         private void Btn_Reg_Click(object sender, EventArgs e)
