@@ -92,6 +92,7 @@ namespace App
             this.Btn_Reg.TabIndex = 5;
             this.Btn_Reg.Text = "Регистрация";
             this.Btn_Reg.UseVisualStyleBackColor = true;
+            this.Btn_Reg.Click += new System.EventHandler(this.Btn_Reg_Click);
             // 
             // LogIn
             // 
