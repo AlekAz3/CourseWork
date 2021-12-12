@@ -15,15 +15,6 @@ namespace App
         public Register()
         {
             InitializeComponent();
-            Load_Settings();
-            
-        }
-        
-
-
-        public void Load_Settings()
-        {
-            
         }
     }
 }
