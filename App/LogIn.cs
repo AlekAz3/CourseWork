@@ -26,8 +26,9 @@ namespace App
 
         private void Btn_Reg_Click(object sender, EventArgs e)
         {
-            this.Hide();
             new Register().Show();
         }
+
+        
     }
 }
