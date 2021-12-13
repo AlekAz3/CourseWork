@@ -13,28 +13,20 @@ namespace App
 
         public SQLiteConnection DataBase
         {
-            get
-            {
-                return database;
-            }
-        }
-        private SQLiteConnection database = new SQLiteConnection(@"Data Source=C:\Users\BL\source\repos\CourseWork\App\DataBase.db; Version=3;");
-
-        public DbConnect()
-        {
-            
+            get {return database; }//Свойство чтоб вызвать метод CreateCommand
         }
 
+        private SQLiteConnection database = new SQLiteConnection(@"Data Source=C:\Users\BL\source\repos\CourseWork\App\DataBase.db; Version=3;"); //Местоположение базы данных и версия 
 
         public void Connect()
         {
-            database.Open();
+            database.Open(); //Открытие Базы данных
         }
 
         public void Disconnect()
         {
 
-            database.Close();
+            database.Close(); //Закрытие базы данных
         }
         
     }
