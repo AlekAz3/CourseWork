@@ -119,6 +119,7 @@ namespace App
             this.Btn_Register.TabIndex = 9;
             this.Btn_Register.Text = "Зарегистрироваться";
             this.Btn_Register.UseVisualStyleBackColor = true;
+            this.Btn_Register.Click += new System.EventHandler(this.Btn_Register_Click);
             // 
             // Check_Adm
             // 
@@ -206,7 +207,7 @@ namespace App
             this.Controls.Add(this.Text_Name);
             this.Controls.Add(this.label1);
             this.Name = "Register";
-            this.Text = "Register";
+            this.Text = "Регистрация";
             this.ResumeLayout(false);
             this.PerformLayout();
 
