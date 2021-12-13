@@ -24,9 +24,9 @@ namespace App
             string pass1 = Text_Pass1.Text;
             string pass2 = Text_Pass2.Text;
 
-            if (Text_Login.Text.Length == 0 && Text_Name.Text.Length == 0 && Text_Pass1.Text.Length == 0 && Text_Pass2.Text.Length == 0 && Text_Passport.Text.Length == 0 && Text_Patronymic.Text.Length == 0 && Text_Surname.Text.Length == 0) 
+            if (Text_Login.Text.Length == 0 || Text_Name.Text.Length == 0 || Text_Pass1.Text.Length == 0 || Text_Pass2.Text.Length == 0 || Text_Passport.Text.Length == 0 || Text_Patronymic.Text.Length == 0 || Text_Surname.Text.Length == 0) 
             {
-                MessageBox.Show("Хаполены не все поля", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Заполены не все поля", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 registration = false;
             }
 
