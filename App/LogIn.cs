@@ -28,5 +28,17 @@ namespace App
         {
             new Register().Show();
         }
+
+        private void LoadForm(object sender, EventArgs e)
+        {
+            DbConnect db = new DbConnect();
+            db.Connect();
+        }
+
+        private void closeF(object sender, FormClosingEventArgs e)
+        {
+            DbConnect db = new DbConnect();
+            db.Disconnect();
+        }
     }
 }

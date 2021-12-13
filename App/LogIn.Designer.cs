@@ -119,6 +119,8 @@ namespace App
             this.Controls.Add(this.label_Log);
             this.Name = "LogIn";
             this.Text = "Вход ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.closeF);
+            this.Load += new System.EventHandler(this.LoadForm);
             this.ResumeLayout(false);
             this.PerformLayout();
 
