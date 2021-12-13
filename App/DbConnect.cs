@@ -10,18 +10,32 @@ namespace App
 {
     class DbConnect
     {
-        private SQLiteConnection db= new SQLiteConnection(@"Data Source=C:\Users\BL\source\repos\CourseWork\App\DataBase.db; Version=3;");
+
+        public SQLiteConnection DataBase
+        {
+            get
+            {
+                return database;
+            }
+        }
+        private SQLiteConnection database = new SQLiteConnection(@"Data Source=C:\Users\BL\source\repos\CourseWork\App\DataBase.db; Version=3;");
+
+        public DbConnect()
+        {
+            
+        }
 
 
         public void Connect()
         {
-            db.Open();
+            database.Open();
         }
 
         public void Disconnect()
         {
 
-            db.Close();
+            database.Close();
         }
+        
     }
 }

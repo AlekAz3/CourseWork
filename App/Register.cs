@@ -56,8 +56,9 @@ namespace App
 
             if (registration)
             {
-                //RegisterToDb register = new RegisterToDb();
-                
+                RegisterToDb register = new RegisterToDb(Text_Name.Text, Text_Surname.Text, Text_Patronymic.Text, Text_Passport.Text, Text_Login.Text, Text_Pass1.Text, Check_Adm.Checked);
+                register.ToDb();
+                MessageBox.Show("Вы зарегистрированы", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
