@@ -15,6 +15,13 @@ namespace App
         public Register()
         {
             InitializeComponent();
+            Load_Settings();
+        }
+
+        public void Load_Settings()
+        {
+            Text_Pass1.UseSystemPasswordChar = true;
+            Text_Pass2.UseSystemPasswordChar = true;
         }
 
         private void Btn_Register_Click(object sender, EventArgs e)
@@ -29,7 +36,6 @@ namespace App
                 new Register().Close();
             }
             else MessageBox.Show("Вы где то допустили ошибку или неверно ввели какое то поле ", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            
         }
     }
 }

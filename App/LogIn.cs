@@ -26,9 +26,26 @@ namespace App
 
         private void Btn_Reg_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("Консоль");
             new Register().Show();
         }
 
-        
+        private void Btn_Enter_Click(object sender, EventArgs e)
+        {
+            string login = Text_Login.Text;
+            string password = Text_Password.Text;
+            Check check = new Check(login, password);
+            DataFromDb data = new DataFromDb(login, password);
+            if (check.Check_LogIn())
+            {
+                (bool stat, string[] curP) = data.CompareWithDb();
+
+                if (stat)
+                    MessageBox.Show($"Вы успешно вошли ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                else MessageBox.Show("Вы не вошли", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else MessageBox.Show("Логин не корректный", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

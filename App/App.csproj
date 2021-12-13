@@ -81,6 +81,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataFromDb.cs" />
     <Compile Include="DbConnect.cs" />
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>

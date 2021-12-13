@@ -83,6 +83,7 @@ namespace App
             this.Btn_Enter.TabIndex = 4;
             this.Btn_Enter.Text = "Войти";
             this.Btn_Enter.UseVisualStyleBackColor = true;
+            this.Btn_Enter.Click += new System.EventHandler(this.Btn_Enter_Click);
             // 
             // Btn_Reg
             // 
@@ -109,7 +110,7 @@ namespace App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(274, 244);
+            this.ClientSize = new System.Drawing.Size(272, 241);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Btn_Reg);
             this.Controls.Add(this.Btn_Enter);

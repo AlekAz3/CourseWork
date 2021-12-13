@@ -33,44 +33,68 @@ namespace App
         public bool AllCheck()//Запуск всех проверок валидации 
         {
             return FillBox() && Check_Password() && Ban_Symbols() && Ru_Symbols() && Check_Passport();
-        } 
+        }
 
         //MessageBox.Show("Пароли не совпадают", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        public bool Check_Password()//Тут идёт подтвержение пароля
+        private bool Check_Password()//Тут идёт подтвержение пароля
         {
             if (!String.Equals(password1, password2)) return false;
             else return true;
-        } 
+        }
 
         //MessageBox.Show("Заполены не все поля", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        public bool FillBox()//Тут идёт проверка все ли поля заполнены 
+        private bool FillBox()//Тут идёт проверка все ли поля заполнены 
         {
             if (name.Length == 0 || surname.Length == 0 || patronymic.Length == 0 || passport.Length == 0 || login.Length == 0 || password1.Length == 0 || password2.Length == 0) return false;
             else return true;
         }
 
         //MessageBox.Show("Присутствуют недопустимые символы в Логин или Пароль ","Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        public bool Ban_Symbols()//в логине и пароле может быть только буквы или цифры тут идёт проверка на это
+        private bool Ban_Symbols()//в логине и пароле может быть только буквы или цифры тут идёт проверка на это
         {
             if (!NoSpecialCharacters(login) || !NoSpecialCharacters(password1)) return false;
             else return true;
         }
 
         //MessageBox.Show("ФИО содержит НЕ русские буквы", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        public bool Ru_Symbols()//ФИО должно содержать только символы русского алфавита
+        private bool Ru_Symbols()//ФИО должно содержать только символы русского алфавита
         {
             if (OnlyRussia(name) && OnlyRussia(surname) && OnlyRussia(patronymic)) return false;
             else return true;
         }
 
         //MessageBox.Show("Серия и Номер паспорта введены неккоректно", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        public bool Check_Passport()//Проверка длинны серии и номера должно быть 10 и так же проверка всех символов чтоб были цифрами
+        private bool Check_Passport()//Проверка длинны серии и номера должно быть 10 и так же проверка всех символов чтоб были цифрами
         {
             if (passport.Length != 10 && OnlyNumber(passport)) return false;
             else return true;
         }
 
         //**************КОНЕЦ****************************
+
+        private string password;
+        public Check(string login, string password)
+        {
+            this.password = password;
+            this.login = login;
+        }
+
+        public bool Check_LogIn()
+        {
+            return CBan_Symbols() && CFill_Box();
+        }
+
+        public bool CBan_Symbols()
+        {
+            if (!NoSpecialCharacters(login) || !NoSpecialCharacters(password)) return false;
+            else return true;
+        }
+
+        public bool CFill_Box()
+        {
+            if (login.Length == 0 && password.Length == 0) return false;
+            else return true;
+        }
 
 
         //***************ВХОД**************************
