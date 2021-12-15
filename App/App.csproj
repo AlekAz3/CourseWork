@@ -99,6 +99,7 @@
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="RegisterToDb.cs" />
+    <Compile Include="TalkWithBD.cs" />
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>

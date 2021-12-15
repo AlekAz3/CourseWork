@@ -17,16 +17,11 @@ namespace App
         [STAThread]
         static void Main()
         {
-            CheckDb();
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LogIn());
         }
 
-        
-        private static void CheckDb()
-        {
-            string way = $@"C:\Users\{Environment.UserName}\AppData\Local\Course\DataBase.db";
-        }
     }
 }
