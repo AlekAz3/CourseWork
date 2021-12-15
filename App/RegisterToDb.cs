@@ -36,7 +36,7 @@ namespace App
             DbConnect db = new DbConnect();
             db.Connect();
             SQLiteCommand cmd = db.DataBase.CreateCommand(); 
-            cmd.CommandText = "INSERT INTO Work(NAME, SERNAME, PATRONYMIC, PASSPORT, LOGIN, PASSWORD, MANAGER) values(@name,@sname,@pname,@pp,@log,@pw,@m)"; //SQL запрос
+            cmd.CommandText = "INSERT INTO Work(NAME, SURNAME, PATRONYMIC, PASSPORT, LOGIN, PASSWORD, MANAGER) values(@name,@sname,@pname,@pp,@log,@pw,@m)"; //SQL запрос
             cmd.Parameters.Add("@name", DbType.String).Value = name;
             cmd.Parameters.Add("@sname", DbType.String).Value = surname;
             cmd.Parameters.Add("@pname", DbType.String).Value = patronymic;

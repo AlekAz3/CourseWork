@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Data;
 using System.Data.SQLite;
 using System.Collections.Generic;
@@ -10,24 +11,27 @@ namespace App
 {
     class DbConnect
     {
+        private static string way = @"C:\Users\BL\source\repos\CourseWork\App\DataBase.db";
+        public SQLiteConnection database = new SQLiteConnection($"Data Source={way}; Version=3;");//Местоположение базы данных и версия 
+
+
+        public DbConnect()
+        {
+
+        }
+
 
         public SQLiteConnection DataBase
         {
-            get {return database; }//Свойство чтоб вызвать метод CreateCommand
+            get { return database; }//Свойство чтоб вызвать метод CreateCommand
         }
 
-        private SQLiteConnection database = new SQLiteConnection(@"Data Source=C:\Users\BL\source\repos\CourseWork\App\DataBase.db; Version=3;"); //Местоположение базы данных и версия 
 
         public void Connect()
         {
             database.Open(); //Открытие Базы данных
         }
-
-        public void Disconnect()
-        {
-
-            database.Close(); //Закрытие базы данных
-        }
-        
     }
+
 }
+
