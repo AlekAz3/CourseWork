@@ -16,14 +16,14 @@ namespace App
     {
         private static string way = $@"C:\Users\{Environment.UserName}\AppData\Local\Course";
         
-        public static void First_Check()
+        public static void Check()
         {
             if (!File.Exists($@"{way}\DataBase.db"))
             {
                 CreateBD();
             }
         }
-
+        
         public static void CreateBD()
         {
 
@@ -33,42 +33,84 @@ namespace App
             SQLiteConnection db = new SQLiteConnection($@"Data Source={way}\DataBase.db;Version=3;");
             db.Open();
 
-            string command = "CREATE TABLE work (" +
-                "id         INTEGER      PRIMARY KEY AUTOINCREMENT" +
-                " NOT NULL," +
-                "    name       VARCHAR (15) NOT NULL," +
-                "    surname    VARCHAR (15) NOT NULL," +
-                "    patronymic VARCHAR (15) NOT NULL," +
-                "    passport   VARCHAR (10) NOT NULL," +
-                "    login      VARCHAR (15) NOT NULL," +
-                "    password   VARCHAR (15) NOT NULL," +
-                "    manager    BOOLEAN      NOT NULL" +
-                ");";
+            string command = "CREATE TABLE Employer (     id          INTEGER      PRIMARY KEY AUTOINCREMENT,     name        VARCHAR (15) NOT NULL,     surname     VARCHAR (15) NOT NULL,     patronym    VARCHAR (10) NOT NULL,     passport    VARCHAR (15) NOT NULL,     reprimands  VARCHAR (6),     rateperhour VARCHAR (6),     penalty     VARCHAR (6),     sickleave   VARCHAR (6),     day         VARCHAR (6),     login       VARCHAR (10) NOT NULL,     password    VARCHAR (10) NOT NULL );";
             SQLiteCommand cmd = new SQLiteCommand(command, db);
             cmd.ExecuteNonQuery();
         }
 
-        public static StringBuilder GetAboutEmployerFromID(int ID)
+        public static string[] GetAllAboutEmployerFromID(int id)
         {
+            Check();
             SQLiteConnection db = new SQLiteConnection($@"Data Source={way}\DataBase.db;Version=3;");
             db.Open();
             
-            StringBuilder Employe = new StringBuilder();
+            //StringBuilder Employe = new StringBuilder();
+            string[] Employe = new string[8];
 
             string command = "SELECT * FROM work WHERE ID LIKE '%' || @id || '%' ";
             SQLiteCommand cmd = new SQLiteCommand(command, db);
-            cmd.Parameters.Add("@id", System.Data.DbType.Int32).Value = ID;
-
+            cmd.Parameters.Add("@id", System.Data.DbType.Int32).Value = id;
             SQLiteDataReader sql = cmd.ExecuteReader();
+
             if (sql.HasRows)
             {
-                Employe.Append(sql["name"]);
-                Employe.Append(sql["surname"]);
-                Employe.Append(sql["patronym"]);
+                Employe[0] = (string)sql["name"];
+                Employe[1] = (string)sql["surname"];
+                Employe[2] = (string)sql["patronym"];
+                Employe[3] = (string)sql["reprimands"];
+                Employe[4] = (string)sql["rateperhour"];
+                Employe[5] = (string)sql["penalty"];
+                Employe[6] = (string)sql["sickleave"];
+                Employe[7] = (string)sql["day"];
+                db.Close();
                 return Employe;
             }
-            else return Employe.Append("Not Find");
-
+            else 
+            { 
+                Employe[0] = "Not Find";
+                db.Close();
+                return Employe;
+            }
         }
+
+        public static void UpdateField(int id, string field, string value)
+        {
+            Check();
+            SQLiteConnection db = new SQLiteConnection($@"Data Source={way}\DataBase.db;Version=3;");
+            db.Open();
+            string command = $@"UPDATE  SET {field} = ‘{value}’ WHERE id = {id};";
+            SQLiteCommand cmd = new SQLiteCommand(command, db);
+            cmd.ExecuteNonQuery();
+            db.Close();
+        }
+
+        public static string GetCurrentValue(int id, string field)
+        {
+            Check();
+            string result;
+
+            SQLiteConnection db = new SQLiteConnection($@"Data Source={way}\DataBase.db;Version=3;");
+            db.Open();
+
+            string command = "SELECT * FROM work WHERE ID LIKE '%' || @id || '%' ";
+            SQLiteCommand cmd = new SQLiteCommand(command, db);
+
+            cmd.Parameters.Add("@id", System.Data.DbType.Int32).Value = id;
+            SQLiteDataReader sql = cmd.ExecuteReader();
+
+            if (sql.HasRows)
+            {
+                result = (string)sql[field];
+                db.Close();
+                return result;
+            }
+            else
+            {
+                result = "Not Find";
+                return result;
+            }
+        }
+
+
     }
 }
