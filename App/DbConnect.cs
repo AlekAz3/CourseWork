@@ -31,6 +31,11 @@ namespace App
         {
             database.Open(); //Открытие Базы данных
         }
+
+        public void Disconnect()
+        {
+            database.Close(); //Открытие Базы данных
+        }
     }
 
 }

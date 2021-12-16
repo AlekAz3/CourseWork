@@ -120,6 +120,7 @@ namespace App
             this.Controls.Add(this.label_Log);
             this.Name = "LogIn";
             this.Text = "Вход ";
+            this.Load += new System.EventHandler(this.LogIn_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
