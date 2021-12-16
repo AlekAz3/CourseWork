@@ -32,7 +32,6 @@ namespace App
 
             SQLiteDataReader sql = cmd.ExecuteReader();
 
-            //return sql.HasRows;
             stat = sql.HasRows;
             if (sql.HasRows)
             {

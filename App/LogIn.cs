@@ -16,7 +16,6 @@ namespace App
         {
             InitializeComponent();
             Load_Settings();
-            TalkWithBD.First_Check();
         }
 
         public void Load_Settings()
@@ -45,11 +44,6 @@ namespace App
                 else MessageBox.Show("Вы не вошли", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else MessageBox.Show("Логин не корректный", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
-        private void LogIn_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

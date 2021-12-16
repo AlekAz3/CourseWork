@@ -44,9 +44,31 @@ namespace App
                 "    password   VARCHAR (15) NOT NULL," +
                 "    manager    BOOLEAN      NOT NULL" +
                 ");";
-
             SQLiteCommand cmd = new SQLiteCommand(command, db);
             cmd.ExecuteNonQuery();
+        }
+
+        public static StringBuilder GetAboutEmployerFromID(int ID)
+        {
+            SQLiteConnection db = new SQLiteConnection($@"Data Source={way}\DataBase.db;Version=3;");
+            db.Open();
+            
+            StringBuilder Employe = new StringBuilder();
+
+            string command = "SELECT * FROM work WHERE ID LIKE '%' || @id || '%' ";
+            SQLiteCommand cmd = new SQLiteCommand(command, db);
+            cmd.Parameters.Add("@id", System.Data.DbType.Int32).Value = ID;
+
+            SQLiteDataReader sql = cmd.ExecuteReader();
+            if (sql.HasRows)
+            {
+                Employe.Append(sql["name"]);
+                Employe.Append(sql["surname"]);
+                Employe.Append(sql["patronym"]);
+                return Employe;
+            }
+            else return Employe.Append("Not Find");
+
         }
     }
 }
