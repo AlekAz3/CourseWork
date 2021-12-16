@@ -26,7 +26,13 @@ namespace App
 
         private void Btn_Register_Click(object sender, EventArgs e)
         {
-            Check check = new Check(Text_Name.Text, Text_Surname.Text, Text_Patronymic.Text, Text_Passport.Text, Text_Login.Text, Text_Pass1.Text, Text_Pass2.Text);
+            Check check = new Check(Text_Name.Text, 
+                                    Text_Surname.Text, 
+                                    Text_Patronymic.Text, 
+                                    Text_Passport.Text, 
+                                    Text_Login.Text, 
+                                    Text_Pass1.Text, 
+                                    Text_Pass2.Text);
 
             if (check.AllCheck())
             {
@@ -39,3 +45,4 @@ namespace App
         }
     }
 }
+

@@ -19,7 +19,13 @@ namespace App
 
 
         //******************РЕГИСТРАЦИЯ***************************
-        public Check(string name, string surname, string patronymic, string passport, string login, string password1, string password2)//Проверка для регистрации
+        public Check(string name, //Проверка для регистрации
+                     string surname, 
+                     string patronymic, 
+                     string passport, 
+                     string login, 
+                     string password1, 
+                     string password2)
         {
             this.name = name;
             this.surname = surname;
@@ -73,6 +79,7 @@ namespace App
         //**************КОНЕЦ****************************
 
         private string password;
+
         public Check(string login, string password)
         {
             this.password = password;

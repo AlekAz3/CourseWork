@@ -20,7 +20,13 @@ namespace App
         private string password;
         private bool manager;
 
-        public RegisterToDb(string name, string surname, string patronymic,string passport, string login, string password, bool manager)
+        public RegisterToDb(string name, 
+                            string surname, 
+                            string patronymic,
+                            string passport, 
+                            string login, 
+                            string password, 
+                            bool manager)
         {
             this.name = name;
             this.surname = surname;

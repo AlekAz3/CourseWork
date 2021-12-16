@@ -26,7 +26,6 @@ namespace App
 
         private void Btn_Reg_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Консоль");
             new Register().Show();
         }
 
