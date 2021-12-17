@@ -43,7 +43,7 @@ namespace App
             //StringBuilder Employe = new StringBuilder();
             string[] Employe = new string[8];
 
-            string command = "SELECT * FROM work WHERE ID LIKE '%' || @id || '%' ";
+            string command = "SELECT * FROM Employer WHERE ID LIKE '%' || @id || '%' ";
             SQLiteCommand cmd = new SQLiteCommand(command, db);
             cmd.Parameters.Add("@id", System.Data.DbType.Int32).Value = id;
             SQLiteDataReader sql = cmd.ExecuteReader();
@@ -74,7 +74,7 @@ namespace App
             Check();
             SQLiteConnection db = new SQLiteConnection($@"Data Source={way}\DataBase.db;Version=3;");
             db.Open();
-            string command = $@"UPDATE  SET {field} = ‘{value}’ WHERE id = {id};";
+            string command = $@"UPDATE Employer SET {field} = ‘{value}’ WHERE id = {id};";
             SQLiteCommand cmd = new SQLiteCommand(command, db);
             cmd.ExecuteNonQuery();
             db.Close();
@@ -88,7 +88,7 @@ namespace App
             SQLiteConnection db = new SQLiteConnection($@"Data Source={way}\DataBase.db;Version=3;");
             db.Open();
 
-            string command = "SELECT * FROM work WHERE ID LIKE '%' || @id || '%' ";
+            string command = "SELECT * FROM Employer WHERE ID LIKE '%' || @id || '%' ";
             SQLiteCommand cmd = new SQLiteCommand(command, db);
 
             cmd.Parameters.Add("@id", System.Data.DbType.Int32).Value = id;
@@ -112,17 +112,35 @@ namespace App
             Check();
             SQLiteConnection db = new SQLiteConnection($@"Data Source={way}\DataBase.db;Version=3;");
             db.Open();
-            string command = $"INSERT INTO Users (name, surname, patronym, passport, login, password) VALUES ('{name}', '{surname}', '{patronym}', '{passport}', '{login}', '{password}')";
+            string command = $"INSERT INTO Employer (name, surname, patronym, passport, login, password) VALUES ('{name}', '{surname}', '{patronym}', '{passport}', '{login}', '{password}')";
             SQLiteCommand cmd = new SQLiteCommand(command, db);
             cmd.ExecuteNonQuery();
             db.Close();
         }
 
-        
-        //public static int CompareWithDb()
-        //{
+        public static bool CompareWithDb(string field, string value)
+        {
+            Check();
 
-        //}
+            SQLiteConnection db = new SQLiteConnection($@"Data Source={way}\DataBase.db;Version=3;");
+            db.Open();
+
+            string command = $"SELECT * FROM Employer WHERE {field} == '{value}'";
+            SQLiteCommand cmd = new SQLiteCommand(command, db);
+
+            SQLiteDataReader sql = cmd.ExecuteReader();
+
+            if (sql.HasRows)
+            {
+                db.Close();
+                return true;
+            }
+            else
+            {
+                db.Close();
+                return false;
+            }
+        }
 
     }
 }

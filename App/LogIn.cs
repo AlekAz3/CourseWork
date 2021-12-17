@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DbLib;
 using System.Windows.Forms;
 
 namespace App
@@ -34,13 +33,10 @@ namespace App
             string login = Text_Login.Text;
             string password = Text_Password.Text;
             Check check = new Check(login, password);
-            DataFromDb data = new DataFromDb(login, password);
 
             if (check.Check_LogIn())
             {
-                (bool stat, string[] curP) = data.CompareWithDb();
-
-                if (stat)
+                if (TalkWithBD.CompareWithDb("login", login) && TalkWithBD.CompareWithDb("password", password))
                     MessageBox.Show($"Вы успешно вошли ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 else MessageBox.Show("Вы не вошли", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);

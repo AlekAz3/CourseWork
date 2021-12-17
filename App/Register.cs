@@ -34,18 +34,12 @@ namespace App
                                     Text_Login.Text, 
                                     Text_Pass1.Text, 
                                     Text_Pass2.Text);
-            if (check().AllCheck())
+            if (check.AllCheck())
             {
-                RegisterToDb register = new RegisterToDb(Text_Name.Text, Text_Surname.Text, Text_Patronymic.Text, Text_Passport.Text, Text_Login.Text, Text_Pass1.Text, Check_Adm.Checked);
-                
-                
-
-
-                register.ToDb();
-
-
-                MessageBox.Show("Вы зарегистрированы", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TalkWithBD.AddNewEmployer(Text_Name.Text, Text_Surname.Text, Text_Patronymic.Text, Text_Passport.Text, Text_Login.Text, Text_Pass1.Text);
                 new Register().Close();
+                MessageBox.Show("Вы зарегистрированы", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
             else MessageBox.Show("Вы где то допустили ошибку или неверно ввели какое то поле ", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
