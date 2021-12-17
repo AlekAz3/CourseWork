@@ -36,7 +36,7 @@ namespace App
                                     Text_Pass2.Text);
             if (check.AllCheck())
             {
-                TalkWithBD.AddNewEmployer(Text_Name.Text, Text_Surname.Text, Text_Patronymic.Text, Text_Passport.Text, Text_Login.Text, Text_Pass1.Text);
+                TalkWithBD.AddNewEmployer(Text_Name.Text.Trim(), Text_Surname.Text.Trim(), Text_Patronymic.Text.Trim(), Text_Passport.Text, Text_Login.Text, Text_Pass1.Text);
                 new Register().Close();
                 MessageBox.Show("Вы зарегистрированы", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 

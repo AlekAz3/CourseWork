@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 using System.Data.SQLite;
 using System.Windows.Forms;
 
@@ -30,7 +31,7 @@ namespace App
             SQLiteConnection db = new SQLiteConnection($@"Data Source={way}\DataBase.db;Version=3;");
             db.Open();
 
-            string command = "CREATE TABLE Employer (     id          INTEGER      PRIMARY KEY AUTOINCREMENT,     name        VARCHAR (15) NOT NULL,     surname     VARCHAR (15) NOT NULL,     patronym    VARCHAR (10) NOT NULL,     passport    VARCHAR (15) NOT NULL,     reprimands  VARCHAR (6),     rateperhour VARCHAR (6),     penalty     VARCHAR (6),     sickleave   VARCHAR (6),     day         VARCHAR (6),     login       VARCHAR (10) NOT NULL,     password    VARCHAR (10) NOT NULL );";
+            string command = "CREATE TABLE Employer (     id          INTEGER      PRIMARY KEY AUTOINCREMENT,     name        VARCHAR (15) NOT NULL,     surname     VARCHAR (15) NOT NULL,     patronym    VARCHAR (10) NOT NULL,     passport    VARCHAR (15) NOT NULL,     reprimands  VARCHAR (6) DEFAULT (0),     rateperhour VARCHAR (6) DEFAULT (0),     penalty     VARCHAR (6) DEFAULT (0),     sickleave   VARCHAR (6) DEFAULT (0),     day         VARCHAR (6) DEFAULT (0),     login       VARCHAR (10) NOT NULL,     password    VARCHAR (10) NOT NULL );";
             SQLiteCommand cmd = new SQLiteCommand(command, db);
             cmd.ExecuteNonQuery();
         }
@@ -41,16 +42,16 @@ namespace App
             SQLiteConnection db = new SQLiteConnection($@"Data Source={way}\DataBase.db;Version=3;");
             db.Open();
             
-            //StringBuilder Employe = new StringBuilder();
             string[] Employe = new string[8];
 
-            string command = "SELECT * FROM Employer WHERE ID LIKE '%' || @id || '%' ";
+            string command = $"SELECT * FROM Employer WHERE id LIKE '%' || {id} || '%'; ";
             SQLiteCommand cmd = new SQLiteCommand(command, db);
             cmd.Parameters.Add("@id", System.Data.DbType.Int32).Value = id;
             SQLiteDataReader sql = cmd.ExecuteReader();
 
             if (sql.HasRows)
             {
+                sql.Read();
                 Employe[0] = (string)sql["name"];
                 Employe[1] = (string)sql["surname"];
                 Employe[2] = (string)sql["patronym"];
@@ -81,10 +82,10 @@ namespace App
             db.Close();
         }
 
-        public static string GetCurrentValue(int id, string field)
+        public static object GetCurrentValue(int id, string field)
         {
             Check();
-            string result;
+            object result;
 
             SQLiteConnection db = new SQLiteConnection($@"Data Source={way}\DataBase.db;Version=3;");
             db.Open();
@@ -97,7 +98,8 @@ namespace App
 
             if (sql.HasRows)
             {
-                result = (string)sql[field];
+                sql.Read();
+                result = sql[$"{field}"];
                 db.Close();
                 return result;
             }
@@ -149,21 +151,24 @@ namespace App
 
             SQLiteConnection db = new SQLiteConnection($@"Data Source={way}\DataBase.db;Version=3;");
             db.Open();
-
-            string command = $"SELECT * FROM Employer WHERE id = (SELECT MAX(id) FROM Employer);";
+            int i = 0;
+            string command = $"SELECT max(id) FROM Employer;";
             SQLiteCommand cmd = new SQLiteCommand(command, db);
 
             SQLiteDataReader sql = cmd.ExecuteReader();
 
             if (sql.HasRows)
             {
-                int x =(int)sql["id"];
+                sql.Read();
+                i = Convert.ToInt32(sql["max(id)"].ToString());
                 db.Close();
-                return x;
+                return i;
             }
+
             else
             {
-                return 0;
+                db.Close();
+                return i;
             }
 
         }

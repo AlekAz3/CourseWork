@@ -15,12 +15,15 @@ namespace App
         public Admin()
         {
             InitializeComponent();
-            Init();
         }
 
-        public static void Init()
+        public void Init()
         {
             MessageBox.Show(TalkWithBD.GetLastID().ToString(), "Да", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            for(int i = 1; i<TalkWithBD.GetLastID()+1; i++)
+            {
+                ChooseEmployer.Items.Add($"{TalkWithBD.GetCurrentValue(i, "surname")}");
+            }
         }
 
 
