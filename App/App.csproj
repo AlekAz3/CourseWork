@@ -90,6 +90,7 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Employer.cs" />
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
