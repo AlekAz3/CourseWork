@@ -37,7 +37,6 @@ namespace App
             this.Label_Passport = new System.Windows.Forms.Label();
             this.Text_Passport = new System.Windows.Forms.TextBox();
             this.Btn_Register = new System.Windows.Forms.Button();
-            this.Check_Adm = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.Text_Login = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -113,24 +112,13 @@ namespace App
             // Btn_Register
             // 
             this.Btn_Register.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Btn_Register.Location = new System.Drawing.Point(12, 286);
+            this.Btn_Register.Location = new System.Drawing.Point(16, 255);
             this.Btn_Register.Name = "Btn_Register";
             this.Btn_Register.Size = new System.Drawing.Size(484, 37);
             this.Btn_Register.TabIndex = 9;
             this.Btn_Register.Text = "Зарегистрироваться";
             this.Btn_Register.UseVisualStyleBackColor = true;
             this.Btn_Register.Click += new System.EventHandler(this.Btn_Register_Click);
-            // 
-            // Check_Adm
-            // 
-            this.Check_Adm.AutoSize = true;
-            this.Check_Adm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Check_Adm.Location = new System.Drawing.Point(12, 252);
-            this.Check_Adm.Name = "Check_Adm";
-            this.Check_Adm.Size = new System.Drawing.Size(153, 28);
-            this.Check_Adm.TabIndex = 11;
-            this.Check_Adm.Text = "Управляющий";
-            this.Check_Adm.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -190,14 +178,13 @@ namespace App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 335);
+            this.ClientSize = new System.Drawing.Size(508, 301);
             this.Controls.Add(this.Text_Pass2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Text_Pass1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Text_Login);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.Check_Adm);
             this.Controls.Add(this.Btn_Register);
             this.Controls.Add(this.Text_Passport);
             this.Controls.Add(this.Label_Passport);
@@ -223,7 +210,6 @@ namespace App
         private System.Windows.Forms.Label Label_Passport;
         private System.Windows.Forms.TextBox Text_Passport;
         private System.Windows.Forms.Button Btn_Register;
-        private System.Windows.Forms.CheckBox Check_Adm;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox Text_Login;
         private System.Windows.Forms.Label label4;

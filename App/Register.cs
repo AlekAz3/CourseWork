@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace App
 {
     public partial class Register : Form
@@ -33,11 +34,16 @@ namespace App
                                     Text_Login.Text, 
                                     Text_Pass1.Text, 
                                     Text_Pass2.Text);
-
-            if (check.AllCheck())
+            if (check().AllCheck())
             {
                 RegisterToDb register = new RegisterToDb(Text_Name.Text, Text_Surname.Text, Text_Patronymic.Text, Text_Passport.Text, Text_Login.Text, Text_Pass1.Text, Check_Adm.Checked);
+                
+                
+
+
                 register.ToDb();
+
+
                 MessageBox.Show("Вы зарегистрированы", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 new Register().Close();
             }

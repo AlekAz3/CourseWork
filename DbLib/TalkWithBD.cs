@@ -1,8 +1,9 @@
 ﻿using System;
 using System.IO;
+using System.Data;
 using System.Data.SQLite;
 
-namespace App
+namespace DbLib
 {
     /// <summary>
     /// Этот класс меняется в зависимости от бд, но методы класса которые исспользуются
@@ -107,7 +108,8 @@ namespace App
             }
         }
 
-        public static void AddNewEmployer(string name, string surname, string patronym, string passport, string login, string password)
+
+        public static void SetNewEmployer(string name, string surname, string patronym, string passport, string login, string password)
         {
             Check();
             SQLiteConnection db = new SQLiteConnection($@"Data Source={way}\DataBase.db;Version=3;");
@@ -118,7 +120,6 @@ namespace App
             db.Close();
         }
 
-        
         //public static int CompareWithDb()
         //{
 
