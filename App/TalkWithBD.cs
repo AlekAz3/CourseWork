@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Data.SQLite;
+using System.Windows.Forms;
 
 namespace App
 {
@@ -140,6 +141,31 @@ namespace App
                 db.Close();
                 return false;
             }
+        }
+
+        public static int GetLastID()
+        {
+            Check();
+
+            SQLiteConnection db = new SQLiteConnection($@"Data Source={way}\DataBase.db;Version=3;");
+            db.Open();
+
+            string command = $"SELECT * FROM Employer WHERE id = (SELECT MAX(id) FROM Employer);";
+            SQLiteCommand cmd = new SQLiteCommand(command, db);
+
+            SQLiteDataReader sql = cmd.ExecuteReader();
+
+            if (sql.HasRows)
+            {
+                int x =(int)sql["id"];
+                db.Close();
+                return x;
+            }
+            else
+            {
+                return 0;
+            }
+
         }
 
     }
