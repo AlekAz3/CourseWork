@@ -34,7 +34,6 @@ namespace App
             this.label_Pass = new System.Windows.Forms.Label();
             this.Text_Password = new System.Windows.Forms.TextBox();
             this.Btn_Enter = new System.Windows.Forms.Button();
-            this.Btn_Reg = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -83,17 +82,7 @@ namespace App
             this.Btn_Enter.TabIndex = 4;
             this.Btn_Enter.Text = "Войти";
             this.Btn_Enter.UseVisualStyleBackColor = true;
-            // 
-            // Btn_Reg
-            // 
-            this.Btn_Reg.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Btn_Reg.Location = new System.Drawing.Point(12, 201);
-            this.Btn_Reg.Name = "Btn_Reg";
-            this.Btn_Reg.Size = new System.Drawing.Size(250, 33);
-            this.Btn_Reg.TabIndex = 5;
-            this.Btn_Reg.Text = "Регистрация";
-            this.Btn_Reg.UseVisualStyleBackColor = true;
-            this.Btn_Reg.Click += new System.EventHandler(this.Btn_Reg_Click);
+            this.Btn_Enter.Click += new System.EventHandler(this.Btn_Enter_Click);
             // 
             // label1
             // 
@@ -109,9 +98,8 @@ namespace App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(274, 244);
+            this.ClientSize = new System.Drawing.Size(272, 210);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Btn_Reg);
             this.Controls.Add(this.Btn_Enter);
             this.Controls.Add(this.Text_Password);
             this.Controls.Add(this.label_Pass);
@@ -131,7 +119,6 @@ namespace App
         private System.Windows.Forms.Label label_Pass;
         private System.Windows.Forms.TextBox Text_Password;
         private System.Windows.Forms.Button Btn_Enter;
-        private System.Windows.Forms.Button Btn_Reg;
         private System.Windows.Forms.Label label1;
     }
 }

@@ -16,7 +16,6 @@ namespace App
         {
             InitializeComponent();
             Load_Settings();
-            
         }
 
         public void Load_Settings()
@@ -26,9 +25,26 @@ namespace App
 
         private void Btn_Reg_Click(object sender, EventArgs e)
         {
-            new Register().Show();
+            new AddEmployer().Show();
         }
 
-        
+        private void Btn_Enter_Click(object sender, EventArgs e)
+        {
+            string login = Text_Login.Text;
+            string password = Text_Password.Text;
+            Check check = new Check(login, password);
+
+            if (check.Check_LogIn())
+            {
+                if (login == "admin" && password == "admin")
+                {
+                    new Admin().Show();
+                    this.Hide();
+                }
+
+                else MessageBox.Show("Вы не вошли", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else MessageBox.Show("Логин не корректный", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }
