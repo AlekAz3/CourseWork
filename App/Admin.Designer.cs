@@ -74,6 +74,7 @@ namespace App
             this.Btn_Refresh.TabIndex = 5;
             this.Btn_Refresh.Text = "Обновить";
             this.Btn_Refresh.UseVisualStyleBackColor = true;
+            this.Btn_Refresh.Click += new System.EventHandler(this.Btn_Refresh_Click);
             // 
             // Admin
             // 

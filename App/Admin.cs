@@ -20,11 +20,12 @@ namespace App
         public void Init()
         {
             List<Employer> employers = new List<Employer>();
+            employers.Add(new Employer());
 
-            for(int i = 0; i <= TalkWithBD.GetLastID(); i++)
+            for(int i = 1; i <= TalkWithBD.GetLastID(); i++)
             {
                 employers.Add(new Employer(TalkWithBD.GetAllAboutEmployerFromID(i)));
-                ChooseEmployer.Items.Add($"{employers[i].surname} {employers[i].name[0].ToString().ToUpperInvariant()}. {employers[i].patronym[0].ToString().ToUpperInvariant()}");
+                ChooseEmployer.Items.Add($"{employers[i].surname}");
             }
             
 
@@ -33,6 +34,12 @@ namespace App
         private void Btn_AddEmp_Click(object sender, EventArgs e)
         {
             new AddEmployer().Show();
+        }
+
+        private void Btn_Refresh_Click(object sender, EventArgs e)
+        {
+            ChooseEmployer.Items.Clear();
+            Init();
         }
     }
 }

@@ -31,7 +31,7 @@ namespace App
             SQLiteConnection db = new SQLiteConnection($@"Data Source={way}\DataBase.db;Version=3;");
             db.Open();
 
-            string command = "CREATE TABLE Employer (     id          INTEGER      PRIMARY KEY AUTOINCREMENT,     name        VARCHAR (15) NOT NULL,     surname     VARCHAR (15) NOT NULL,     patronym    VARCHAR (10) NOT NULL,     passport    VARCHAR (15) NOT NULL,     reprimands  VARCHAR (6) DEFAULT (0),     rateperhour VARCHAR (6) DEFAULT (0),     penalty     VARCHAR (6) DEFAULT (0),     sickleave   VARCHAR (6) DEFAULT (0),     day         VARCHAR (6) DEFAULT (0),     years         VARCHAR (6) DEFAULT (0),     salary_last         VARCHAR (6) DEFAULT (0),     post       VARCHAR (10) NOT NULL;";
+            string command = "CREATE TABLE Employer (     id          INTEGER      PRIMARY KEY AUTOINCREMENT,     name        VARCHAR (15) NOT NULL,     surname     VARCHAR (15) NOT NULL,     patronym    VARCHAR (10) NOT NULL,     passport    VARCHAR (15) NOT NULL,     reprimands  VARCHAR (6) DEFAULT (0),     rateperhour VARCHAR (6) DEFAULT (0),     penalty     VARCHAR (6) DEFAULT (0),     sickleave   VARCHAR (6) DEFAULT (0),     day         VARCHAR (6) DEFAULT (0),     years         VARCHAR (6) DEFAULT (0),     salary_last         VARCHAR (6) DEFAULT (0),     post         VARCHAR (6) DEFAULT (0));";
             SQLiteCommand cmd = new SQLiteCommand(command, db);
             cmd.ExecuteNonQuery();
         }

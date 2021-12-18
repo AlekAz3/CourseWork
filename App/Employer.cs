@@ -44,6 +44,10 @@ namespace App
             }
         }
 
+        public Employer()
+        {
+        }
+
         public decimal Salary()
         {
             return (Convert.ToDecimal(day) * 8.0m * Convert.ToDecimal(rateperhour)) - Convert.ToDecimal(penalty) * 1500;
@@ -74,6 +78,5 @@ namespace App
         {
             return Salary() + Sick() - Taxes();
         }
-
     }
 }

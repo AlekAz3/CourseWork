@@ -34,7 +34,7 @@ namespace App
 
         public bool AllCheck()//Запуск всех проверок валидации 
         {
-            return FillBox()  && Ban_Symbols() && Ru_Symbols() && Check_Passport();
+            return FillBox() && Ru_Symbols() && Check_Passport();
         }
 
         //MessageBox.Show("Пароли не совпадают", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -48,11 +48,7 @@ namespace App
         }
 
         //MessageBox.Show("Присутствуют недопустимые символы в Логин или Пароль ","Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        private bool Ban_Symbols()//в логине и пароле может быть только буквы или цифры тут идёт проверка на это
-        {
-            if (!NoSpecialCharacters(login)) return false;
-            else return true;
-        }
+        
 
         //MessageBox.Show("ФИО содержит НЕ русские буквы", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         private bool Ru_Symbols()//ФИО должно содержать только символы русского алфавита
@@ -98,7 +94,7 @@ namespace App
         //Метод возвращающий true если строка НЕ содержить спец символов
         private static bool NoSpecialCharacters(string str)
         {
-            string specialCharacters = @"%!@#$%^&*()?/>.<,:;'\|}]{[_~`+=-\";
+            string specialCharacters = @"%!@#$%^&*()?/>.<,:;'\|}]{[_~`+=-" + "\"";
             char[] specialCharactersArray = specialCharacters.ToCharArray();
 
             int index = str.IndexOfAny(specialCharactersArray);
