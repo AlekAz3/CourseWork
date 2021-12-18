@@ -31,7 +31,7 @@ namespace App
             SQLiteConnection db = new SQLiteConnection($@"Data Source={way}\DataBase.db;Version=3;");
             db.Open();
 
-            string command = "CREATE TABLE Employer (     id          INTEGER      PRIMARY KEY AUTOINCREMENT,     name        VARCHAR (15) NOT NULL,     surname     VARCHAR (15) NOT NULL,     patronym    VARCHAR (10) NOT NULL,     passport    VARCHAR (15) NOT NULL,     reprimands  VARCHAR (6) DEFAULT (0),     rateperhour VARCHAR (6) DEFAULT (0),     penalty     VARCHAR (6) DEFAULT (0),     sickleave   VARCHAR (6) DEFAULT (0),     day         VARCHAR (6) DEFAULT (0),     login       VARCHAR (10) NOT NULL,     password    VARCHAR (10) NOT NULL );";
+            string command = "CREATE TABLE Employer (     id          INTEGER      PRIMARY KEY AUTOINCREMENT,     name        VARCHAR (15) NOT NULL,     surname     VARCHAR (15) NOT NULL,     patronym    VARCHAR (10) NOT NULL,     passport    VARCHAR (15) NOT NULL,     reprimands  VARCHAR (6) DEFAULT (0),     rateperhour VARCHAR (6) DEFAULT (0),     penalty     VARCHAR (6) DEFAULT (0),     sickleave   VARCHAR (6) DEFAULT (0),     day         VARCHAR (6) DEFAULT (0),     years         VARCHAR (6) DEFAULT (0),     salary_last         VARCHAR (6) DEFAULT (0),     post       VARCHAR (10) NOT NULL;";
             SQLiteCommand cmd = new SQLiteCommand(command, db);
             cmd.ExecuteNonQuery();
         }
@@ -42,11 +42,10 @@ namespace App
             SQLiteConnection db = new SQLiteConnection($@"Data Source={way}\DataBase.db;Version=3;");
             db.Open();
             
-            string[] Employe = new string[8];
+            string[] Employe = new string[11];
 
             string command = $"SELECT * FROM Employer WHERE id LIKE '%' || {id} || '%'; ";
             SQLiteCommand cmd = new SQLiteCommand(command, db);
-            cmd.Parameters.Add("@id", System.Data.DbType.Int32).Value = id;
             SQLiteDataReader sql = cmd.ExecuteReader();
 
             if (sql.HasRows)
@@ -60,6 +59,9 @@ namespace App
                 Employe[5] = (string)sql["penalty"];
                 Employe[6] = (string)sql["sickleave"];
                 Employe[7] = (string)sql["day"];
+                Employe[8] = (string)sql["years"];
+                Employe[9] = (string)sql["salary_last"];
+                Employe[10] = (string)sql["post"];
                 db.Close();
                 return Employe;
             }
@@ -110,12 +112,12 @@ namespace App
             }
         }
 
-        public static void AddNewEmployer(string name, string surname, string patronym, string passport, string login, string password)
+        public static void AddNewEmployer(string name, string surname, string patronym, string passport, string post)
         {
             Check();
             SQLiteConnection db = new SQLiteConnection($@"Data Source={way}\DataBase.db;Version=3;");
             db.Open();
-            string command = $"INSERT INTO Employer (name, surname, patronym, passport, login, password) VALUES ('{name}', '{surname}', '{patronym}', '{passport}', '{login}', '{password}')";
+            string command = $"INSERT INTO Employer (name, surname, patronym, passport, post) VALUES ('{name}', '{surname}', '{patronym}', '{passport}', '{post}')";
             SQLiteCommand cmd = new SQLiteCommand(command, db);
             cmd.ExecuteNonQuery();
             db.Close();

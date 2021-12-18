@@ -37,7 +37,7 @@ namespace App
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(8, 9);
+            this.label1.Location = new System.Drawing.Point(12, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 20);
             this.label1.TabIndex = 1;
@@ -47,7 +47,7 @@ namespace App
             // 
             this.ChooseEmployer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ChooseEmployer.FormattingEnabled = true;
-            this.ChooseEmployer.Location = new System.Drawing.Point(12, 40);
+            this.ChooseEmployer.Location = new System.Drawing.Point(12, 66);
             this.ChooseEmployer.Name = "ChooseEmployer";
             this.ChooseEmployer.Size = new System.Drawing.Size(166, 28);
             this.ChooseEmployer.TabIndex = 2;

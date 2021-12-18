@@ -100,11 +100,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Check.cs" />
-    <Compile Include="Register.cs">
+    <Compile Include="AddEmployer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Register.Designer.cs">
-      <DependentUpon>Register.cs</DependentUpon>
+    <Compile Include="AddEmployer.Designer.cs">
+      <DependentUpon>AddEmployer.cs</DependentUpon>
     </Compile>
     <Compile Include="TalkWithBD.cs" />
     <EmbeddedResource Include="Admin.resx">
@@ -122,8 +122,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Register.resx">
-      <DependentUpon>Register.cs</DependentUpon>
+    <EmbeddedResource Include="AddEmployer.resx">
+      <DependentUpon>AddEmployer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />

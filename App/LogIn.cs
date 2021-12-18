@@ -25,7 +25,7 @@ namespace App
 
         private void Btn_Reg_Click(object sender, EventArgs e)
         {
-            new Register().Show();
+            new AddEmployer().Show();
         }
 
         private void Btn_Enter_Click(object sender, EventArgs e)
@@ -36,8 +36,11 @@ namespace App
 
             if (check.Check_LogIn())
             {
-                if (TalkWithBD.CompareWithDb("login", login) && TalkWithBD.CompareWithDb("password", password))
-                    MessageBox.Show($"Вы успешно вошли ", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (login == "admin" && password == "admin")
+                {
+                    new Admin().Show();
+                    this.Hide();
+                }
 
                 else MessageBox.Show("Вы не вошли", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

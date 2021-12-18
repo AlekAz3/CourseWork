@@ -19,11 +19,15 @@ namespace App
 
         public void Init()
         {
-            MessageBox.Show(TalkWithBD.GetLastID().ToString(), "Да", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            for(int i = 1; i<TalkWithBD.GetLastID()+1; i++)
+            List<Employer> employers = new List<Employer>();
+
+            for(int i = 0; i <= TalkWithBD.GetLastID(); i++)
             {
-                ChooseEmployer.Items.Add($"{TalkWithBD.GetCurrentValue(i, "surname")}");
+                employers.Add(new Employer(TalkWithBD.GetAllAboutEmployerFromID(i)));
+                ChooseEmployer.Items.Add($"{employers[i].surname} {employers[i].name[0].ToString().ToUpperInvariant()}. {employers[i].patronym[0].ToString().ToUpperInvariant()}");
             }
+            
+
         }
 
 
