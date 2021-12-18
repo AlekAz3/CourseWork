@@ -15,6 +15,7 @@ namespace App
         public Admin()
         {
             InitializeComponent();
+            Init();
         }
 
         public void Init()
@@ -27,8 +28,6 @@ namespace App
                 employers.Add(new Employer(TalkWithBD.GetAllAboutEmployerFromID(i)));
                 ChooseEmployer.Items.Add($"{employers[i].surname}");
             }
-            
-
         }
 
         private void Btn_AddEmp_Click(object sender, EventArgs e)
@@ -38,8 +37,12 @@ namespace App
 
         private void Btn_Refresh_Click(object sender, EventArgs e)
         {
+            string x = (ChooseEmployer.SelectedIndex + 1).ToString();
+            MessageBox.Show(x);
+
             ChooseEmployer.Items.Clear();
             Init();
         }
+
     }
 }

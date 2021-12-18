@@ -20,17 +20,16 @@ namespace App
 
         private void Btn_Add_Click(object sender, EventArgs e)
         {
-            Check check = new Check(Text_Name.Text, 
-                                    Text_Surname.Text, 
+            Check check = new Check(Text_Surame.Text, 
+                                    Text_Name.Text, 
                                     Text_Patronymic.Text,
                                     Text_Passport.Text,
-                                    Text_Post.Text
-                                    );
+                                    Text_Post.Text);
             if (check.AllCheck())
             {
-                TalkWithBD.AddNewEmployer(Text_Name.Text.Trim(), Text_Surname.Text.Trim(), Text_Patronymic.Text.Trim(), Text_Passport.Text, Text_Post.Text);
+                TalkWithBD.AddNewEmployer(Text_Surame.Text.Trim(), Text_Name.Text.Trim(), Text_Patronymic.Text.Trim(), Text_Passport.Text, Text_Post.Text);
+                Text_Surame.Text = "";
                 Text_Name.Text = "";
-                Text_Surname.Text = "";
                 Text_Patronymic.Text = "";
                 Text_Passport.Text = "";
                 Text_Post.Text = "";
@@ -39,8 +38,5 @@ namespace App
             }
             else MessageBox.Show("Вы где то допустили ошибку или неверно ввели какое то поле ", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
-        
     }
 }
-

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Text;
 using System.Data.SQLite;
 using System.Windows.Forms;
 
@@ -162,11 +161,11 @@ namespace App
             if (sql.HasRows)
             {
                 sql.Read();
-                i = Convert.ToInt32(sql["max(id)"].ToString());
+                if (sql["max(id)"].ToString() != "") i = Convert.ToInt32(sql["max(id)"].ToString());
+                else MessageBox.Show("Пустая база данных", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 db.Close();
                 return i;
             }
-
             else
             {
                 db.Close();
