@@ -150,7 +150,7 @@ namespace App
             this.Controls.Add(this.Text_Name);
             this.Controls.Add(this.label1);
             this.Name = "AddEmployer";
-            this.Text = "Добавление работника";
+            this.Text = "Добавление";
             this.ResumeLayout(false);
             this.PerformLayout();
 

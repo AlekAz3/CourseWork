@@ -31,6 +31,8 @@ namespace App
         {
             this.label1 = new System.Windows.Forms.Label();
             this.ChooseEmployer = new System.Windows.Forms.ComboBox();
+            this.Btn_AddEmp = new System.Windows.Forms.Button();
+            this.Btn_Refresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -52,11 +54,34 @@ namespace App
             this.ChooseEmployer.Size = new System.Drawing.Size(166, 28);
             this.ChooseEmployer.TabIndex = 2;
             // 
+            // Btn_AddEmp
+            // 
+            this.Btn_AddEmp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Btn_AddEmp.Location = new System.Drawing.Point(644, 12);
+            this.Btn_AddEmp.Name = "Btn_AddEmp";
+            this.Btn_AddEmp.Size = new System.Drawing.Size(143, 29);
+            this.Btn_AddEmp.TabIndex = 4;
+            this.Btn_AddEmp.Text = "Добавить сотрудника";
+            this.Btn_AddEmp.UseVisualStyleBackColor = true;
+            this.Btn_AddEmp.Click += new System.EventHandler(this.Btn_AddEmp_Click);
+            // 
+            // Btn_Refresh
+            // 
+            this.Btn_Refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Btn_Refresh.Location = new System.Drawing.Point(215, 66);
+            this.Btn_Refresh.Name = "Btn_Refresh";
+            this.Btn_Refresh.Size = new System.Drawing.Size(131, 28);
+            this.Btn_Refresh.TabIndex = 5;
+            this.Btn_Refresh.Text = "Обновить";
+            this.Btn_Refresh.UseVisualStyleBackColor = true;
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(901, 543);
+            this.ClientSize = new System.Drawing.Size(799, 543);
+            this.Controls.Add(this.Btn_Refresh);
+            this.Controls.Add(this.Btn_AddEmp);
             this.Controls.Add(this.ChooseEmployer);
             this.Controls.Add(this.label1);
             this.Name = "Admin";
@@ -69,5 +94,7 @@ namespace App
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox ChooseEmployer;
+        private System.Windows.Forms.Button Btn_AddEmp;
+        private System.Windows.Forms.Button Btn_Refresh;
     }
 }

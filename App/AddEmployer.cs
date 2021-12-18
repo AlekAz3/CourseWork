@@ -29,7 +29,11 @@ namespace App
             if (check.AllCheck())
             {
                 TalkWithBD.AddNewEmployer(Text_Name.Text.Trim(), Text_Surname.Text.Trim(), Text_Patronymic.Text.Trim(), Text_Passport.Text, Text_Post.Text);
-                new AddEmployer().Close();
+                Text_Name.Text = "";
+                Text_Surname.Text = "";
+                Text_Patronymic.Text = "";
+                Text_Passport.Text = "";
+                Text_Post.Text = "";
                 MessageBox.Show("Работник добавлен", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
             }

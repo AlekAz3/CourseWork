@@ -30,7 +30,9 @@ namespace App
 
         }
 
-
-
+        private void Btn_AddEmp_Click(object sender, EventArgs e)
+        {
+            new AddEmployer().Show();
+        }
     }
 }
