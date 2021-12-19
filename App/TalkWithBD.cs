@@ -72,24 +72,57 @@ namespace App
             }
         }
 
-        public static void UpdateAllAboutEmployer(int id, string reprimands, string rateperhour, string penalty, string sickleave, string day, string years, string salary_last)
-        {
-            UpdateField(id, "reprimands", reprimands);
-            UpdateField(id, "rateperhour", rateperhour);
-            UpdateField(id, "penalty", penalty);
-            UpdateField(id, "sickleave", sickleave);
-            UpdateField(id, "day", day);
-            UpdateField(id, "years", years);
-            UpdateField(id, "salary_last", salary_last);
-        }
+        //public static void UpdateAllAboutEmployer(int id, string reprimands, string rateperhour, string penalty, string sickleave, string day, string years, string salary_last)
+        //{
+        //    UpdateField(id, "reprimands", reprimands);
+        //    UpdateField(id, "rateperhour", rateperhour);
+        //    UpdateField(id, "penalty", penalty);
+        //    UpdateField(id, "sickleave", sickleave);
+        //    UpdateField(id, "day", day);
+        //    UpdateField(id, "years", years);
+        //    UpdateField(id, "salary_last", salary_last);
 
+        //    //Check();
+        //    //SQLiteConnection db = new SQLiteConnection($@"Data Source={way}\DataBase.db;Version=3;");
+        //    //db.Open();
+
+        //    //string command = $@"UPDATE Employer SET reprimands = '{reprimands}' WHERE id = {id};";
+        //    //SQLiteCommand cmd = new SQLiteCommand(command, db);
+        //    //cmd.ExecuteNonQuery();
+
+        //    //command = $@"UPDATE Employer SET rateperhour = '{rateperhour}' WHERE id = {id};";
+        //    //cmd = new SQLiteCommand(command, db);
+        //    //cmd.ExecuteNonQuery();
+
+        //    //command = $@"UPDATE Employer SET penalty = '{penalty}' WHERE id = {id};";
+        //    //cmd = new SQLiteCommand(command, db);
+        //    //cmd.ExecuteNonQuery();
+
+        //    //command = $@"UPDATE Employer SET sickleave = '{sickleave}' WHERE id = {id};";
+        //    //cmd = new SQLiteCommand(command, db);
+        //    //cmd.ExecuteNonQuery();
+
+        //    //command = $@"UPDATE Employer SET day = '{day}' WHERE id = {id};";
+        //    //cmd = new SQLiteCommand(command, db);
+        //    //cmd.ExecuteNonQuery();
+
+        //    //command = $@"UPDATE Employer SET years = '{years}' WHERE id = {id};";
+        //    //cmd = new SQLiteCommand(command, db);
+        //    //cmd.ExecuteNonQuery();
+
+        //    //command = $@"UPDATE Employer SET salary_last = '{salary_last}' WHERE id = {id};";
+        //    //cmd = new SQLiteCommand(command, db);
+        //    //cmd.ExecuteNonQuery();
+
+        //    //db.Close();
+        //}
 
         public static void UpdateField(int id, string field, string value)
         {
             Check();
             SQLiteConnection db = new SQLiteConnection($@"Data Source={way}\DataBase.db;Version=3;");
             db.Open();
-            string command = $@"UPDATE Employer SET {field} = ‘{value}’ WHERE id = {id};";
+            string command = $@"UPDATE Employer SET {field} = {value} WHERE id = {id};";
             SQLiteCommand cmd = new SQLiteCommand(command, db);
             cmd.ExecuteNonQuery();
             db.Close();

@@ -49,6 +49,13 @@ namespace App
             CurID = ChooseEmployer.SelectedIndex + 1;
             Label_FIO.Text = $"{employers[CurID].surname} {employers[CurID].name} {employers[CurID].patronym}";
 
+            Num_Day.Value = int.Parse(employers[CurID].day);
+            Num_Penalty.Value = int.Parse(employers[CurID].penalty);
+            Num_Reprimands.Value = int.Parse(employers[CurID].reprinands);
+            Num_Reteperhour.Value = int.Parse(employers[CurID].rateperhour);
+            Num_Sickleave.Value = int.Parse(employers[CurID].years);
+            Num_Last.Value = int.Parse(employers[CurID].salary_last);
+            Num_Years.Value = int.Parse(employers[CurID].years);
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)
@@ -58,8 +65,24 @@ namespace App
 
         private void btn_salary_Click(object sender, EventArgs e)
         {
+            //TalkWithBD.UpdateAllAboutEmployer(CurID, Num_Reprimands.Value.ToString(), Num_Reteperhour.Value.ToString(), Num_Penalty.Value.ToString(), Num_Sickleave.Value.ToString(), Num_Day.Value.ToString(), Num_Years.Value.ToString(), Num_Last.Value.ToString());
+            //TalkWithBD.UpdateField(CurID, "reprimands", Num_Reprimands.Value.ToString());
+            //TalkWithBD.UpdateField(CurID, "rateperhour", Num_Reteperhour.Value.ToString());
+            //TalkWithBD.UpdateField(CurID, "penalty", Num_Penalty.Value.ToString());
+            //TalkWithBD.UpdateField(CurID, "sickleave", Num_Sickleave.Value.ToString());
+            //TalkWithBD.UpdateField(CurID, "day", Num_Day.Value.ToString());
+            //TalkWithBD.UpdateField(CurID, "years", Num_Years.Value.ToString());
+            //TalkWithBD.UpdateField(CurID, "salary_last", Num_Last.Value.ToString());
 
-            MessageBox.Show($"Итого к выплате {employers[CurID].Salary()}") ;
+            employers[CurID].reprinands = Num_Reprimands.Value.ToString();
+            employers[CurID].rateperhour = Num_Reteperhour.Value.ToString();
+            employers[CurID].penalty = Num_Penalty.Value.ToString();
+            employers[CurID].sickleave = Num_Sickleave.Value.ToString();
+            employers[CurID].day = Num_Day.Value.ToString();
+            employers[CurID].years = Num_Years.Value.ToString();
+            employers[CurID].salary_last = Num_Last.Value.ToString();
+
+            MessageBox.Show($"Итого к выплате {(int)employers[CurID].ToPay()}") ;
         }
 
     }
