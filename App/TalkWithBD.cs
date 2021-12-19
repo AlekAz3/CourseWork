@@ -20,7 +20,7 @@ namespace App
                 CreateBD();
             }
         }
-        
+
         public static void CreateBD()
         {
 
@@ -40,7 +40,7 @@ namespace App
             Check();
             SQLiteConnection db = new SQLiteConnection($@"Data Source={way}\DataBase.db;Version=3;");
             db.Open();
-            
+
             string[] Employe = new string[11];
 
             string command = $"SELECT * FROM Employer WHERE id LIKE '%' || {id} || '%'; ";
@@ -106,6 +106,7 @@ namespace App
             }
             else
             {
+                db.Close();
                 result = "Not Find";
                 return result;
             }

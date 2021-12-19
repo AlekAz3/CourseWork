@@ -30,7 +30,7 @@ namespace App
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.Text_Surame = new System.Windows.Forms.TextBox();
+            this.Text_Surname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Text_Name = new System.Windows.Forms.TextBox();
             this.Text_Patronymic = new System.Windows.Forms.TextBox();
@@ -52,13 +52,13 @@ namespace App
             this.label1.Text = "Добавление работника";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // Text_Surame
+            // Text_Surname
             // 
-            this.Text_Surame.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Text_Surame.Location = new System.Drawing.Point(12, 78);
-            this.Text_Surame.Name = "Text_Surame";
-            this.Text_Surame.Size = new System.Drawing.Size(231, 29);
-            this.Text_Surame.TabIndex = 1;
+            this.Text_Surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Text_Surname.Location = new System.Drawing.Point(12, 78);
+            this.Text_Surname.Name = "Text_Surname";
+            this.Text_Surname.Size = new System.Drawing.Size(231, 29);
+            this.Text_Surname.TabIndex = 1;
             // 
             // label2
             // 
@@ -147,7 +147,7 @@ namespace App
             this.Controls.Add(this.Text_Patronymic);
             this.Controls.Add(this.Text_Name);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.Text_Surame);
+            this.Controls.Add(this.Text_Surname);
             this.Controls.Add(this.label1);
             this.Name = "AddEmployer";
             this.Text = "Добавление";
@@ -159,7 +159,7 @@ namespace App
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox Text_Surame;
+        private System.Windows.Forms.TextBox Text_Surname;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Text_Name;
         private System.Windows.Forms.TextBox Text_Patronymic;

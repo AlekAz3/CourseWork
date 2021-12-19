@@ -20,7 +20,9 @@ namespace App
 
         public void Init()
         {
-            List<Employer> employers = new List<Employer>();
+            ChooseEmployer.Items.Clear();
+
+            var employers = new List<Employer>();
             employers.Add(new Employer());
 
             for(int i = 1; i <= TalkWithBD.GetLastID(); i++)
@@ -35,14 +37,24 @@ namespace App
             new AddEmployer().Show();
         }
 
-        private void Btn_Refresh_Click(object sender, EventArgs e)
+        private void Btn_Show_Click(object sender, EventArgs e)
         {
-            string x = (ChooseEmployer.SelectedIndex + 1).ToString();
-            MessageBox.Show(x);
+            var employers = new List<Employer>();
+            employers.Add(new Employer());
 
-            ChooseEmployer.Items.Clear();
-            Init();
+            for (int i = 1; i <= TalkWithBD.GetLastID(); i++)
+            {
+                employers.Add(new Employer(TalkWithBD.GetAllAboutEmployerFromID(i)));
+            }
+
+            int id = ChooseEmployer.SelectedIndex + 1;
+            Label_FIO.Text = $"{employers[id].surname} {employers[id].name} {employers[id].patronym}";
+
         }
 
+        private void btn_refresh_Click(object sender, EventArgs e)
+        {
+            Init();
+        }
     }
 }
