@@ -13,9 +13,15 @@ namespace App
 {
     public partial class AddEmployer : Form
     {
+
+
+        
+        private TalkWithBD talkWithBD = new TalkWithBD();
+
         public AddEmployer()
         {
             InitializeComponent();
+            
         }
 
         private void Btn_Add_Click(object sender, EventArgs e)
@@ -27,7 +33,7 @@ namespace App
                                     Text_Post.Text);
             if (check.AllCheck())
             {
-                TalkWithBD.AddNewEmployer(Text_Name.Text.Trim(), Text_Surname.Text.Trim(), Text_Patronymic.Text.Trim(), Text_Passport.Text, Text_Post.Text);
+                talkWithBD.AddNewEmployer(Text_Name.Text.Trim(), Text_Surname.Text.Trim(), Text_Patronymic.Text.Trim(), Text_Passport.Text, Text_Post.Text);
                 Text_Surname.Text = "";
                 Text_Name.Text = "";
                 Text_Patronymic.Text = "";

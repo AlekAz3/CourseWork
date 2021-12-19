@@ -33,7 +33,6 @@ namespace App
             this.ChooseEmployer = new System.Windows.Forms.ComboBox();
             this.Btn_AddEmp = new System.Windows.Forms.Button();
             this.Btn_Show = new System.Windows.Forms.Button();
-            this.btn_salary = new System.Windows.Forms.Button();
             this.Label_FIO = new System.Windows.Forms.Label();
             this.Num_Reprimands = new System.Windows.Forms.NumericUpDown();
             this.Num_Penalty = new System.Windows.Forms.NumericUpDown();
@@ -49,6 +48,12 @@ namespace App
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.L_salary = new System.Windows.Forms.Label();
+            this.L_Tax = new System.Windows.Forms.Label();
+            this.L_Pay = new System.Windows.Forms.Label();
+            this.L_ndfl = new System.Windows.Forms.Label();
+            this.btn_salary = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Num_Reprimands)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Num_Penalty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Num_Day)).BeginInit();
@@ -62,7 +67,7 @@ namespace App
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(13, 32);
+            this.label1.Location = new System.Drawing.Point(8, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 20);
             this.label1.TabIndex = 1;
@@ -72,7 +77,7 @@ namespace App
             // 
             this.ChooseEmployer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ChooseEmployer.FormattingEnabled = true;
-            this.ChooseEmployer.Location = new System.Drawing.Point(13, 55);
+            this.ChooseEmployer.Location = new System.Drawing.Point(12, 54);
             this.ChooseEmployer.Name = "ChooseEmployer";
             this.ChooseEmployer.Size = new System.Drawing.Size(170, 28);
             this.ChooseEmployer.TabIndex = 2;
@@ -99,22 +104,11 @@ namespace App
             this.Btn_Show.UseVisualStyleBackColor = true;
             this.Btn_Show.Click += new System.EventHandler(this.Btn_Show_Click);
             // 
-            // btn_salary
-            // 
-            this.btn_salary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_salary.Location = new System.Drawing.Point(169, 385);
-            this.btn_salary.Name = "btn_salary";
-            this.btn_salary.Size = new System.Drawing.Size(190, 30);
-            this.btn_salary.TabIndex = 7;
-            this.btn_salary.Text = "Рассчитать выплату";
-            this.btn_salary.UseVisualStyleBackColor = true;
-            this.btn_salary.Click += new System.EventHandler(this.btn_salary_Click);
-            // 
             // Label_FIO
             // 
             this.Label_FIO.AutoSize = true;
             this.Label_FIO.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Label_FIO.Location = new System.Drawing.Point(9, 104);
+            this.Label_FIO.Location = new System.Drawing.Point(9, 85);
             this.Label_FIO.Name = "Label_FIO";
             this.Label_FIO.Size = new System.Drawing.Size(54, 24);
             this.Label_FIO.TabIndex = 8;
@@ -123,7 +117,7 @@ namespace App
             // Num_Reprimands
             // 
             this.Num_Reprimands.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Num_Reprimands.Location = new System.Drawing.Point(239, 150);
+            this.Num_Reprimands.Location = new System.Drawing.Point(246, 150);
             this.Num_Reprimands.Name = "Num_Reprimands";
             this.Num_Reprimands.Size = new System.Drawing.Size(120, 26);
             this.Num_Reprimands.TabIndex = 9;
@@ -131,7 +125,7 @@ namespace App
             // Num_Penalty
             // 
             this.Num_Penalty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Num_Penalty.Location = new System.Drawing.Point(239, 214);
+            this.Num_Penalty.Location = new System.Drawing.Point(246, 214);
             this.Num_Penalty.Name = "Num_Penalty";
             this.Num_Penalty.Size = new System.Drawing.Size(120, 26);
             this.Num_Penalty.TabIndex = 10;
@@ -139,7 +133,7 @@ namespace App
             // Num_Day
             // 
             this.Num_Day.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Num_Day.Location = new System.Drawing.Point(239, 278);
+            this.Num_Day.Location = new System.Drawing.Point(246, 278);
             this.Num_Day.Name = "Num_Day";
             this.Num_Day.Size = new System.Drawing.Size(120, 26);
             this.Num_Day.TabIndex = 12;
@@ -147,7 +141,7 @@ namespace App
             // Num_Sickleave
             // 
             this.Num_Sickleave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Num_Sickleave.Location = new System.Drawing.Point(239, 246);
+            this.Num_Sickleave.Location = new System.Drawing.Point(246, 246);
             this.Num_Sickleave.Name = "Num_Sickleave";
             this.Num_Sickleave.Size = new System.Drawing.Size(120, 26);
             this.Num_Sickleave.TabIndex = 11;
@@ -155,7 +149,7 @@ namespace App
             // Num_Reteperhour
             // 
             this.Num_Reteperhour.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Num_Reteperhour.Location = new System.Drawing.Point(239, 182);
+            this.Num_Reteperhour.Location = new System.Drawing.Point(246, 180);
             this.Num_Reteperhour.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -168,7 +162,7 @@ namespace App
             // Num_Last
             // 
             this.Num_Last.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Num_Last.Location = new System.Drawing.Point(237, 342);
+            this.Num_Last.Location = new System.Drawing.Point(246, 342);
             this.Num_Last.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -181,7 +175,7 @@ namespace App
             // Num_Years
             // 
             this.Num_Years.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Num_Years.Location = new System.Drawing.Point(237, 310);
+            this.Num_Years.Location = new System.Drawing.Point(246, 310);
             this.Num_Years.Name = "Num_Years";
             this.Num_Years.Size = new System.Drawing.Size(120, 26);
             this.Num_Years.TabIndex = 13;
@@ -256,12 +250,81 @@ namespace App
             this.label9.TabIndex = 20;
             this.label9.Text = "Отработаннеы дни в месяце ";
             // 
+            // L_salary
+            // 
+            this.L_salary.AutoSize = true;
+            this.L_salary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.L_salary.Location = new System.Drawing.Point(9, 432);
+            this.L_salary.Name = "L_salary";
+            this.L_salary.Size = new System.Drawing.Size(88, 20);
+            this.L_salary.TabIndex = 23;
+            this.L_salary.Text = "Зарплата ";
+            // 
+            // L_Tax
+            // 
+            this.L_Tax.AutoSize = true;
+            this.L_Tax.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.L_Tax.Location = new System.Drawing.Point(9, 464);
+            this.L_Tax.Name = "L_Tax";
+            this.L_Tax.Size = new System.Drawing.Size(139, 20);
+            this.L_Tax.TabIndex = 24;
+            this.L_Tax.Text = "Налоги составят";
+            // 
+            // L_Pay
+            // 
+            this.L_Pay.AutoSize = true;
+            this.L_Pay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.L_Pay.Location = new System.Drawing.Point(9, 526);
+            this.L_Pay.Name = "L_Pay";
+            this.L_Pay.Size = new System.Drawing.Size(136, 20);
+            this.L_Pay.TabIndex = 25;
+            this.L_Pay.Text = "Итого к выплате";
+            // 
+            // L_ndfl
+            // 
+            this.L_ndfl.AutoSize = true;
+            this.L_ndfl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.L_ndfl.Location = new System.Drawing.Point(9, 495);
+            this.L_ndfl.Name = "L_ndfl";
+            this.L_ndfl.Size = new System.Drawing.Size(206, 20);
+            this.L_ndfl.TabIndex = 26;
+            this.L_ndfl.Text = "Выплата НДФЛ составит";
+            this.L_ndfl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btn_salary
+            // 
+            this.btn_salary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_salary.Location = new System.Drawing.Point(12, 387);
+            this.btn_salary.Name = "btn_salary";
+            this.btn_salary.Size = new System.Drawing.Size(170, 28);
+            this.btn_salary.TabIndex = 27;
+            this.btn_salary.Text = "Рассчитать";
+            this.btn_salary.UseVisualStyleBackColor = true;
+            this.btn_salary.Click += new System.EventHandler(this.btn_salary_Click);
+            // 
+            // btn_Save
+            // 
+            this.btn_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_Save.Location = new System.Drawing.Point(244, 387);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(122, 28);
+            this.btn_Save.TabIndex = 28;
+            this.btn_Save.Text = "Сохранить в бд";
+            this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(369, 423);
+            this.ClientSize = new System.Drawing.Size(379, 553);
+            this.Controls.Add(this.btn_Save);
+            this.Controls.Add(this.btn_salary);
+            this.Controls.Add(this.L_ndfl);
+            this.Controls.Add(this.L_Pay);
+            this.Controls.Add(this.L_Tax);
+            this.Controls.Add(this.L_salary);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
@@ -277,7 +340,6 @@ namespace App
             this.Controls.Add(this.Num_Penalty);
             this.Controls.Add(this.Num_Reprimands);
             this.Controls.Add(this.Label_FIO);
-            this.Controls.Add(this.btn_salary);
             this.Controls.Add(this.Btn_Show);
             this.Controls.Add(this.Btn_AddEmp);
             this.Controls.Add(this.ChooseEmployer);
@@ -301,7 +363,6 @@ namespace App
         private System.Windows.Forms.ComboBox ChooseEmployer;
         private System.Windows.Forms.Button Btn_AddEmp;
         private System.Windows.Forms.Button Btn_Show;
-        private System.Windows.Forms.Button btn_salary;
         private System.Windows.Forms.Label Label_FIO;
         private System.Windows.Forms.NumericUpDown Num_Reprimands;
         private System.Windows.Forms.NumericUpDown Num_Penalty;
@@ -317,5 +378,11 @@ namespace App
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label L_salary;
+        private System.Windows.Forms.Label L_Tax;
+        private System.Windows.Forms.Label L_Pay;
+        private System.Windows.Forms.Label L_ndfl;
+        private System.Windows.Forms.Button btn_salary;
+        private System.Windows.Forms.Button btn_Save;
     }
 }

@@ -44,9 +44,8 @@ namespace App
             }
         }
 
-        public Employer()
-        {
-        }
+        public Employer() { }
+
 
         public decimal Salary()
         {
@@ -70,8 +69,7 @@ namespace App
             else if (Convert.ToInt32(years) >= 5 && Convert.ToInt32(years) < 8) 
                 return (Convert.ToDecimal(salary_last) / 30.0m) * 0.8m * Convert.ToDecimal(sickleave);
 
-            else 
-                return (Convert.ToDecimal(salary_last) / 30.0m) * Convert.ToDecimal(sickleave);
+            else return (Convert.ToDecimal(salary_last) / 30.0m) * Convert.ToDecimal(sickleave);
         }
 
         public decimal ToPay()
