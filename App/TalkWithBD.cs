@@ -72,6 +72,18 @@ namespace App
             }
         }
 
+        public static void UpdateAllAboutEmployer(int id, string reprimands, string rateperhour, string penalty, string sickleave, string day, string years, string salary_last)
+        {
+            UpdateField(id, "reprimands", reprimands);
+            UpdateField(id, "rateperhour", rateperhour);
+            UpdateField(id, "penalty", penalty);
+            UpdateField(id, "sickleave", sickleave);
+            UpdateField(id, "day", day);
+            UpdateField(id, "years", years);
+            UpdateField(id, "salary_last", salary_last);
+        }
+
+
         public static void UpdateField(int id, string field, string value)
         {
             Check();

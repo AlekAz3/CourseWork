@@ -15,15 +15,16 @@ namespace App
         public Admin()
         {
             InitializeComponent();
-            Init();
+            ComboBoxReFrash();
         }
 
-        public void Init()
+        public int CurID { get; set; }
+
+        private List<Employer> employers = new List<Employer>() {new Employer() };
+
+        public void ComboBoxReFrash()
         {
             ChooseEmployer.Items.Clear();
-
-            var employers = new List<Employer>();
-            employers.Add(new Employer());
 
             for(int i = 1; i <= TalkWithBD.GetLastID(); i++)
             {
@@ -39,22 +40,27 @@ namespace App
 
         private void Btn_Show_Click(object sender, EventArgs e)
         {
-            var employers = new List<Employer>();
-            employers.Add(new Employer());
-
+            
             for (int i = 1; i <= TalkWithBD.GetLastID(); i++)
             {
                 employers.Add(new Employer(TalkWithBD.GetAllAboutEmployerFromID(i)));
             }
 
-            int id = ChooseEmployer.SelectedIndex + 1;
-            Label_FIO.Text = $"{employers[id].surname} {employers[id].name} {employers[id].patronym}";
+            CurID = ChooseEmployer.SelectedIndex + 1;
+            Label_FIO.Text = $"{employers[CurID].surname} {employers[CurID].name} {employers[CurID].patronym}";
 
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)
         {
-            Init();
+            ComboBoxReFrash();
         }
+
+        private void btn_salary_Click(object sender, EventArgs e)
+        {
+
+            MessageBox.Show($"Итого к выплате {employers[CurID].Salary()}") ;
+        }
+
     }
 }
