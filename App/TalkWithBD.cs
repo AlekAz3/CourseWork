@@ -20,6 +20,11 @@ namespace App
         }
 
 
+        public void CloseBD()
+        {
+            db.Close();
+        }
+
         public  void Check()
         {
             if (!File.Exists($@"{way}\DataBase.db"))

@@ -36,14 +36,11 @@ namespace App
             }
         }
 
-        private void Btn_AddEmp_Click(object sender, EventArgs e)
-        {
-            new AddEmployer().Show();
-        }
 
-        private void Btn_Show_Click(object sender, EventArgs e)
+
+        private void ChooseEmployer_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             for (int i = 1; i <= talkWithBD.GetLastID(); i++)
             {
                 employers.Add(new Employer(talkWithBD.GetAllAboutEmployerFromID(i)));
@@ -59,15 +56,9 @@ namespace App
             Num_Sickleave.Value = int.Parse(employers[CurID].years);
             Num_Last.Value = int.Parse(employers[CurID].salary_last);
             Num_Years.Value = int.Parse(employers[CurID].years);
-        }
 
-        private void btn_refresh_Click(object sender, EventArgs e)
-        {
-            ComboBoxReFrash();
-        }
 
-        private void btn_salary_Click(object sender, EventArgs e)
-        {
+
             string reprimands = Num_Reprimands.Value.ToString();
             string rateperhour = Num_Reteperhour.Value.ToString();
             string penalty = Num_Penalty.Value.ToString();
@@ -76,54 +67,34 @@ namespace App
             string years = Num_Years.Value.ToString();
             string salary_last = Num_Last.Value.ToString();
 
-            MessageBox.Show("Гей порно");
+            talkWithBD.UpdateAllAboutEmployer(CurID, reprimands, rateperhour, penalty, sickleave, day, years, salary_last);
 
-
-            if (!Equals( reprimands, employers[CurID].reprinands))
-            {
-                employers[CurID].reprinands = Num_Reprimands.Value.ToString();
-                talkWithBD.UpdateField(CurID, "reprimands", Num_Reprimands.Value.ToString());
-            }
-
-            if (Equals(rateperhour, employers[CurID].rateperhour))
-            {
-                employers[CurID].rateperhour = Num_Reteperhour.Value.ToString();
-                talkWithBD.UpdateField(CurID, "rateperhour", Num_Reteperhour.Value.ToString());
-            }
-
-            
-
-
-
-            //talkWithBD.UpdateAllAboutEmployer(CurID, reprimands, rateperhour, penalty, sickleave, day, years, salary_last);
-
-            
-            employers[CurID].rateperhour = Num_Reteperhour.Value.ToString();
-            employers[CurID].penalty = Num_Penalty.Value.ToString();
-            employers[CurID].sickleave = Num_Sickleave.Value.ToString();
-            employers[CurID].day = Num_Day.Value.ToString();
-            employers[CurID].years = Num_Years.Value.ToString();
-            employers[CurID].salary_last = Num_Last.Value.ToString();
+            employers[CurID].reprinands = reprimands;
+            employers[CurID].rateperhour = rateperhour;
+            employers[CurID].penalty = penalty;
+            employers[CurID].sickleave = sickleave;
+            employers[CurID].day = day;
+            employers[CurID].years = years;
+            employers[CurID].salary_last = salary_last;
 
             L_salary.Text = $"Зарплата {(int)employers[CurID].Salary()} рублей";
             L_Tax.Text = $"Налоги составят {(int)employers[CurID].Taxes()} рублей";
             L_ndfl.Text = $"Выплата НДФЛ составит {(int)employers[CurID].ndfl()} рублей";
             L_Pay.Text = $"Итого к выплате {(int)employers[CurID].ToPay()} рублей";
-
         }
 
-        private void btn_Save_Click(object sender, EventArgs e)
+        private void добавитьРаботникаToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //talkWithBD.UpdateField(CurID, "reprimands", Num_Reprimands.Value.ToString());
-            //talkWithBD.UpdateField(CurID, "rateperhour", Num_Reteperhour.Value.ToString());
-            //talkWithBD.UpdateField(CurID, "penalty", Num_Penalty.Value.ToString());
-            //talkWithBD.UpdateField(CurID, "sickleave", Num_Sickleave.Value.ToString());
-            //talkWithBD.UpdateField(CurID, "day", Num_Day.Value.ToString());
-            //talkWithBD.UpdateField(CurID, "years", Num_Years.Value.ToString());
-            //talkWithBD.UpdateField(CurID, "salary_last", Num_Last.Value.ToString());
-
+            new AddEmployer().Show();
         }
 
-        
+        private void программаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            talkWithBD.CloseBD();
+            new LogIn().Close();
+            new AddEmployer().Close();
+            this.Close();
+            Application.Exit();
+        }
     }
 }
