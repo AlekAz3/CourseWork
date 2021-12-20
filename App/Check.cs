@@ -29,7 +29,7 @@ namespace App
             this.surname = surname;
             this.patronymic = patronymic;
             this.passport = passport;
-            
+            this.post = post;
         }
 
         public bool AllCheck()//Запуск всех проверок валидации 
@@ -123,9 +123,5 @@ namespace App
             if (index == -1) return true;
             else return false;
         }
-
-
-
-
     }
 }

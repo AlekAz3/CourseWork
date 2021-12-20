@@ -30,9 +30,9 @@ namespace App
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.Text_Name = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.Text_Surname = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Text_Name = new System.Windows.Forms.TextBox();
             this.Text_Patronymic = new System.Windows.Forms.TextBox();
             this.Btn_Add = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,13 +52,13 @@ namespace App
             this.label1.Text = "Добавление работника";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // Text_Name
+            // Text_Surname
             // 
-            this.Text_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Text_Name.Location = new System.Drawing.Point(12, 78);
-            this.Text_Name.Name = "Text_Name";
-            this.Text_Name.Size = new System.Drawing.Size(231, 29);
-            this.Text_Name.TabIndex = 1;
+            this.Text_Surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Text_Surname.Location = new System.Drawing.Point(12, 78);
+            this.Text_Surname.Name = "Text_Surname";
+            this.Text_Surname.Size = new System.Drawing.Size(231, 29);
+            this.Text_Surname.TabIndex = 1;
             // 
             // label2
             // 
@@ -70,13 +70,13 @@ namespace App
             this.label2.TabIndex = 2;
             this.label2.Text = "ФИО";
             // 
-            // Text_Surname
+            // Text_Name
             // 
-            this.Text_Surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Text_Surname.Location = new System.Drawing.Point(12, 113);
-            this.Text_Surname.Name = "Text_Surname";
-            this.Text_Surname.Size = new System.Drawing.Size(232, 29);
-            this.Text_Surname.TabIndex = 3;
+            this.Text_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Text_Name.Location = new System.Drawing.Point(12, 113);
+            this.Text_Name.Name = "Text_Name";
+            this.Text_Name.Size = new System.Drawing.Size(232, 29);
+            this.Text_Name.TabIndex = 3;
             // 
             // Text_Patronymic
             // 
@@ -145,9 +145,9 @@ namespace App
             this.Controls.Add(this.Text_Passport);
             this.Controls.Add(this.Label_Passport);
             this.Controls.Add(this.Text_Patronymic);
-            this.Controls.Add(this.Text_Surname);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.Text_Name);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.Text_Surname);
             this.Controls.Add(this.label1);
             this.Name = "AddEmployer";
             this.Text = "Добавление";
@@ -159,9 +159,9 @@ namespace App
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox Text_Name;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Text_Surname;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox Text_Name;
         private System.Windows.Forms.TextBox Text_Patronymic;
         private System.Windows.Forms.Button Btn_Add;
         private System.Windows.Forms.Label label3;
