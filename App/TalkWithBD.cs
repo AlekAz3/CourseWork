@@ -19,7 +19,6 @@ namespace App
             db.Open();
         }
 
-
         public void CloseBD()
         {
             db.Close();
@@ -32,8 +31,6 @@ namespace App
                 CreateBD();
             }
         }
-
-
 
         public  void CreateBD()
         {
@@ -94,12 +91,9 @@ namespace App
 
         }
 
-        
-        public  object GetCurrentValue(int id, string field)
+        public object GetCurrentValue(int id, string field)
         {
             object result;
-
-
             string command = "SELECT * FROM Employer WHERE ID LIKE '%' || @id || '%' ";
             SQLiteCommand cmd = new SQLiteCommand(command, db);
 

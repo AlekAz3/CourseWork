@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -14,8 +7,6 @@ namespace App
     public partial class AddEmployer : Form
     {
 
-
-        
         private TalkWithBD talkWithBD = new TalkWithBD();
 
         public AddEmployer()
@@ -40,7 +31,6 @@ namespace App
                 Text_Passport.Text = "";
                 Text_Post.Text = "";
                 MessageBox.Show("Работник добавлен", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
             }
             else MessageBox.Show("Вы где то допустили ошибку или неверно ввели какое то поле ", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }

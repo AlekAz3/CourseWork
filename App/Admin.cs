@@ -1,12 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace App
@@ -36,8 +29,6 @@ namespace App
             }
         }
 
-
-
         private void ChooseEmployer_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -56,26 +47,6 @@ namespace App
             Num_Sickleave.Value = int.Parse(employers[CurID].years);
             Num_Last.Value = int.Parse(employers[CurID].salary_last);
             Num_Years.Value = int.Parse(employers[CurID].years);
-
-
-
-            string reprimands = Num_Reprimands.Value.ToString();
-            string rateperhour = Num_Reteperhour.Value.ToString();
-            string penalty = Num_Penalty.Value.ToString();
-            string sickleave = Num_Sickleave.Value.ToString();
-            string day = Num_Day.Value.ToString();
-            string years = Num_Years.Value.ToString();
-            string salary_last = Num_Last.Value.ToString();
-
-            talkWithBD.UpdateAllAboutEmployer(CurID, reprimands, rateperhour, penalty, sickleave, day, years, salary_last);
-
-            employers[CurID].reprinands = reprimands;
-            employers[CurID].rateperhour = rateperhour;
-            employers[CurID].penalty = penalty;
-            employers[CurID].sickleave = sickleave;
-            employers[CurID].day = day;
-            employers[CurID].years = years;
-            employers[CurID].salary_last = salary_last;
 
             L_salary.Text = $"Зарплата {(int)employers[CurID].Salary()} рублей";
             L_Tax.Text = $"Налоги составят {(int)employers[CurID].Taxes()} рублей";
