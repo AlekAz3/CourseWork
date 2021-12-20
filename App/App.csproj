@@ -106,7 +106,7 @@
     <Compile Include="AddEmployer.Designer.cs">
       <DependentUpon>AddEmployer.cs</DependentUpon>
     </Compile>
-    <Compile Include="TalkWithBD.cs" />
+    <Compile Include="TalkWithDB.cs" />
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>

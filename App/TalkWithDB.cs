@@ -9,13 +9,14 @@ namespace App
     /// Этот класс меняется в зависимости от бд, но методы класса которые исспользуются
     /// в коде не меняются 
     /// </summary>
-     class TalkWithBD
+     class TalkWithDB
     {
         private static  string way = $@"C:\Users\{Environment.UserName}\AppData\Local\Course";
         private  SQLiteConnection db = new SQLiteConnection($@"Data Source={way}\DataBase.db;Version=3;");
 
-        public TalkWithBD()
+        public TalkWithDB()
         {
+            Check();
             db.Open();
         }
 

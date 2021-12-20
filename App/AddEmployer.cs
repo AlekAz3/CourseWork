@@ -7,7 +7,7 @@ namespace App
     public partial class AddEmployer : Form
     {
 
-        private TalkWithBD talkWithBD = new TalkWithBD();
+        private TalkWithDB talkWithBD = new TalkWithDB();
 
         public AddEmployer()
         {

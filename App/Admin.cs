@@ -6,7 +6,7 @@ namespace App
 {
     public partial class Admin : Form
     {
-        private TalkWithBD talkWithBD = new TalkWithBD();
+        private TalkWithDB talkWithBD = new TalkWithDB();
 
         public Admin()
         {
