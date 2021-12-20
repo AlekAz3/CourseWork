@@ -53,6 +53,7 @@ namespace App
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.программаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавитьРаботникаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Num_Reprimands)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Num_Penalty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Num_Day)).BeginInit();
@@ -225,15 +226,15 @@ namespace App
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.Location = new System.Drawing.Point(9, 266);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(231, 20);
+            this.label9.Size = new System.Drawing.Size(146, 20);
             this.label9.TabIndex = 20;
-            this.label9.Text = "Отработаннеы дни в месяце ";
+            this.label9.Text = "Отработаные дни";
             // 
             // L_salary
             // 
             this.L_salary.AutoSize = true;
             this.L_salary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.L_salary.Location = new System.Drawing.Point(8, 358);
+            this.L_salary.Location = new System.Drawing.Point(8, 361);
             this.L_salary.Name = "L_salary";
             this.L_salary.Size = new System.Drawing.Size(88, 20);
             this.L_salary.TabIndex = 23;
@@ -277,6 +278,7 @@ namespace App
             this.добавитьРаботникаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.menuStrip1.Size = new System.Drawing.Size(374, 24);
             this.menuStrip1.TabIndex = 27;
             this.menuStrip1.Text = "menuStrip1";
@@ -295,12 +297,23 @@ namespace App
             this.добавитьРаботникаToolStripMenuItem.Text = "Добавить работника";
             this.добавитьРаботникаToolStripMenuItem.Click += new System.EventHandler(this.добавитьРаботникаToolStripMenuItem_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(332, 54);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 28);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Re";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(374, 479);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.L_ndfl);
             this.Controls.Add(this.L_Pay);
             this.Controls.Add(this.L_Tax);
@@ -365,5 +378,6 @@ namespace App
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem программаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem добавитьРаботникаToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
     }
 }
