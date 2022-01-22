@@ -16,7 +16,7 @@ namespace App
 
         public TalkWithBD()
         {
-            db.Open();
+            this.Check();
         }
 
 
@@ -25,11 +25,15 @@ namespace App
             db.Close();
         }
 
-        public  void Check()
+        public void Check()
         {
             if (!File.Exists($@"{way}\DataBase.db"))
             {
                 CreateBD();
+            }
+            else
+            {
+                db.Open();
             }
         }
 
